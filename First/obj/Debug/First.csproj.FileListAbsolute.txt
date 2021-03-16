@@ -4,3 +4,6 @@ C:\Users\anton\RiderProjects\RPKS1\First\obj\Debug\First.csprojAssemblyReference
 C:\Users\anton\RiderProjects\RPKS1\First\obj\Debug\First.csproj.CoreCompileInputs.cache
 C:\Users\anton\RiderProjects\RPKS1\First\obj\Debug\First.exe
 C:\Users\anton\RiderProjects\RPKS1\First\obj\Debug\First.pdb
+C:\Users\anton\RiderProjects\RPKS1\First\bin\Debug\ClassLibrary.dll
+C:\Users\anton\RiderProjects\RPKS1\First\bin\Debug\ClassLibrary.pdb
+C:\Users\anton\RiderProjects\RPKS1\First\obj\Debug\First.csproj.CopyComplete
