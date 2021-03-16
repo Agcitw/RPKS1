@@ -4,30 +4,19 @@ using System.Linq;
 namespace ClassLibrary
 {
 	public delegate bool Rule(object data);
-	public abstract class Validator<T>
+	public class Validator<T>
 	{
-		protected readonly List<Rule> CollectionOfRules = new List<Rule>();
+		private readonly List<Rule> _collectionOfRules = new List<Rule>();
 		public Validator<T> Successor { get; set; }
-		public abstract void Request(T data);
-		public void AddRule(Rule rule)
+		public void Handle(T data)
 		{
-			CollectionOfRules.Add(rule);
+			if (_collectionOfRules.Count == 0)
+				throw new NoRulesException();
+			if (_collectionOfRules.Select(rule => rule.Invoke(data)).Any(resultOfCheck => !resultOfCheck))
+				throw new BadCheckException();
+			Successor?.Handle(data);
 		}
-	}
-
-	public class ConcreteValidator<T> : Validator<T>
-	{
-		public override void Request(T data)
-		{
-			if (CollectionOfRules.Count == 0)
-				throw new AggregateException("No rules");
-			
-			if (CollectionOfRules.Select(rule => rule.Invoke(data)).Any(resultOfCheck => !resultOfCheck))
-			{
-				throw new AggregateException("Check is not completed");
-			}
-
-			Successor?.Request(data);
-		}
+		public void AddRule(Rule rule) =>
+			_collectionOfRules.Add(rule);
 	}
 }

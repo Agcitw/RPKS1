@@ -4,7 +4,7 @@
 	{
 		public override void Build()
 		{
-			ConcreteConcreteValidator.AddRule(Rules.IsNotNull);
+			Validator.AddRule(Rules.IsNotNull);
 		}
 	}
 	
@@ -12,7 +12,7 @@
 	{
 		public override void Build()
 		{
-			ConcreteConcreteValidator.AddRule(Rules.IsStringWithoutUpperChars);
+			Validator.AddRule(Rules.IsStringWithoutUpperChars);
 		}
 	}
 
@@ -20,7 +20,7 @@
 	{
 		public override void Build()
 		{
-			ConcreteConcreteValidator.AddRule(Rules.IsPositiveNumber);
+			Validator.AddRule(Rules.IsPositiveNumber);
 		}
 	}
 	
@@ -28,7 +28,7 @@
 	{
 		public override void Build()
 		{
-			ConcreteConcreteValidator.AddRule(Rules.IsZero);
+			Validator.AddRule(Rules.IsZero);
 		}
 	}
 }

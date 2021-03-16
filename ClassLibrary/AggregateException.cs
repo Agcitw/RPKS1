@@ -2,15 +2,6 @@
 
 namespace ClassLibrary
 {
-	public class AggregateException : Exception
-	{
-		public AggregateException(string message) : base(message)
-		{
-		}
-
-		public void PrintMessage()
-		{
-			Console.WriteLine(Message);
-		}
-	}
+	public class NoRulesException : AggregateException {}
+	public class BadCheckException : AggregateException {}
 }

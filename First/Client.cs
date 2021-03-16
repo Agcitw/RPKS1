@@ -15,7 +15,8 @@ namespace First
 			var validatorStr2 = builderStr2.GetResult();
 
 			validatorStr.Successor = validatorStr2;
-			validatorStr.Request("hello");
+			validatorStr.Handle("hello");
+			
 			
 			Builder<int> builderInt = new ValidatorBuilderInt1<int>();
 			builderInt.Build();
@@ -26,7 +27,7 @@ namespace First
 			var validatorInt2 = builderInt2.GetResult();
 
 			validatorInt.Successor = validatorInt2;
-			validatorInt.Request(0);
+			validatorInt.Handle(0);
 		}
 	}
 }
