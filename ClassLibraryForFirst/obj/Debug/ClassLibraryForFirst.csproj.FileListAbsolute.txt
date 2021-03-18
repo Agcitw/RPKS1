@@ -1,0 +1,6 @@
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\bin\Debug\ClassLibraryForFirst.dll
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\bin\Debug\ClassLibraryForFirst.pdb
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\obj\Debug\ClassLibraryForFirst.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\obj\Debug\ClassLibraryForFirst.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\obj\Debug\ClassLibraryForFirst.dll
+C:\Users\anton\RiderProjects\RPKS1\ClassLibraryForFirst\obj\Debug\ClassLibraryForFirst.pdb
