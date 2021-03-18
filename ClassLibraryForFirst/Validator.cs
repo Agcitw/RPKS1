@@ -1,23 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace ClassLibrary
 {
-	public delegate bool Rule(object data);
 	public class Validator<T>
 	{
-		private readonly Lazy<List<Rule>> _collectionOfRules = new Lazy<List<Rule>>();
-		public Validator<T> Successor { get; set; }
-		public void Handle(T data)
+		private readonly List<ElementOfChain> _collectionOfRules = new List<ElementOfChain>();
+		public void FormTheChain()
 		{
-			if (_collectionOfRules.Value.Count == 0)
-				throw new NoRulesException();
-			if (_collectionOfRules.Value.Select(rule => rule.Invoke(data)).Any(resultOfCheck => !resultOfCheck))
-				throw new BadCheckException();
-			Successor?.Handle(data);
+			for (var i = 1; i < _collectionOfRules.Count; i++)
+				_collectionOfRules[i - 1].Successor = _collectionOfRules[i];
 		}
-		public void AddRule(Rule rule) =>
-			_collectionOfRules.Value.Add(rule);
+		public void Check(T data)
+		{
+			if (_collectionOfRules.Count == 0)
+				throw new NoRulesException();
+			_collectionOfRules[0].Handle(data);
+		}
+		#region Add's
+		public void AddCheckOnNotNull() =>
+			_collectionOfRules.Add(new CheckOnNotNull());
+		public void AddCheckOnPositiveNumber() =>
+			_collectionOfRules.Add(new CheckOnPositiveNumber());
+		public void AddCheckOnZero() => 
+			_collectionOfRules.Add(new CheckOnZero());
+		public void AddCheckOnStringWithoutUpperChars() =>
+			_collectionOfRules.Add(new CheckOnStringWithoutUpperChars());
+		#endregion
 	}
 }

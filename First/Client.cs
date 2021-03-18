@@ -1,4 +1,5 @@
-﻿using ClassLibrary;
+﻿using System;
+using ClassLibrary;
 
 namespace First
 {
@@ -6,28 +7,28 @@ namespace First
 	{
 		public static void Main()
 		{
-			Builder<string> builderStr = new ValidatorBuilderStr1<string>();
-			builderStr.Build();
-			var validatorStr = builderStr.GetResult();
-			
-			Builder<string> builderStr2 = new ValidatorBuilderStr2<string>();
-			builderStr2.Build();
-			var validatorStr2 = builderStr2.GetResult();
+			try
+			{
+				Builder<string> builder1 = new ConcreteBuilder<string>();
+				builder1.Build();
+				var validator1 = builder1.GetResult();
+				validator1.Check("string for test");
+				//more checks...
 
-			validatorStr.Successor = validatorStr2;
-			validatorStr.Handle("hello");
-			
-			
-			Builder<int> builderInt = new ValidatorBuilderInt1<int>();
-			builderInt.Build();
-			var validatorInt = builderInt.GetResult();
-			
-			Builder<int> builderInt2 = new ValidatorBuilderInt2<int>();
-			builderInt2.Build();
-			var validatorInt2 = builderInt2.GetResult();
-
-			validatorInt.Successor = validatorInt2;
-			validatorInt.Handle(0);
+				Builder<int> builder2 = new ConcreteBuilder<int>();
+				builder2.Build();
+				var validator2 = builder2.GetResult();
+				validator2.Check(0);
+				//more checks...
+			}
+			catch (NoRulesException e)
+			{
+				Console.WriteLine(e.Message);
+			}
+			catch (BadCheckException e)
+			{
+				Console.WriteLine(e.Message);
+			}
 		}
 	}
 }

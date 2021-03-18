@@ -16,7 +16,7 @@ namespace ClassLibrary
 		public override string Message { get; }
 		public BadCheckException()
 		{
-			Message = "Check not completed";
+			Message = "Check is not completed";
 		}
 	}
 }
