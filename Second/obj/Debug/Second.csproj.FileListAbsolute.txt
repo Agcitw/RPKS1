@@ -1,0 +1,10 @@
+C:\Users\anton\RiderProjects\RPKS1\Second\bin\Debug\Second.exe
+C:\Users\anton\RiderProjects\RPKS1\Second\bin\Debug\Second.pdb
+C:\Users\anton\RiderProjects\RPKS1\Second\obj\Debug\Second.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\RPKS1\Second\obj\Debug\Second.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\RPKS1\Second\obj\Debug\Second.exe
+C:\Users\anton\RiderProjects\RPKS1\Second\obj\Debug\Second.pdb
+C:\Users\anton\RiderProjects\RPKS1\Second\bin\Debug\NLog.dll
+C:\Users\anton\RiderProjects\RPKS1\Second\bin\Debug\NLog.xml
+C:\Users\anton\RiderProjects\RPKS1\Second\obj\Debug\Second.csproj.CopyComplete
+C:\Users\anton\RiderProjects\RPKS1\Second\bin\Debug\NLog.config

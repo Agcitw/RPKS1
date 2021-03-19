@@ -3,4 +3,5 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Canton_005CRiderProjects_005CRPKS1_005CClassLibrary_005Cbin_005CDebug_005CClassLibrary_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\anton\RiderProjects\RPKS1\packages\NLog.4.7.8\lib\net45\NLog.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
