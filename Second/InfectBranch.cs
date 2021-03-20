@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Timers;
 using NLog;
 
 namespace Second
@@ -9,15 +10,13 @@ namespace Second
 	public class InfectDiseasesDepartment
 	{
 		private static Logger _logger = LogManager.GetCurrentClassLogger();
-		
-		private ObservationRoom _observationRoom;               //M
-		private List<Doctor> _doctors;                          //N
-		public static int LimitOfWaiting { get; private set;  } //T
-		private static readonly TimerCallback TimerCallback = InfectAll;
-		private static Timer _timerForQueue;
+		private readonly ObservationRoom _observationRoom;
+		private List<Doctor> _doctors;
+		public static int LimitOfWaiting { get; private set;  }
 		private static int PeriodToInfectAll = 60_000;
 		public static Queue<Human> _queueToObservationRoom = new Queue<Human>();
-
+		private static System.Timers.Timer timerForQueueInfect;
+		
 		public InfectDiseasesDepartment(int n, int m, int t)
 		{
 			_observationRoom = new ObservationRoom(n);
@@ -33,26 +32,40 @@ namespace Second
 			else
 				_queueToObservationRoom.Enqueue(human);
 		}
-
-		private static void InfectAll(object o)
-		{
-			foreach (var human in _queueToObservationRoom)
-			{
-				human.IsInfected = true;
-			}
-		}
 		
 		public void Startwork()
 		{
-			//_timerForQueue = new Timer(TimerCallback, null, 0, PeriodToInfectAll);
+			timerForQueueInfect = new System.Timers.Timer(PeriodToInfectAll);
+			timerForQueueInfect.Elapsed += OnTimedEvent;
+			timerForQueueInfect.AutoReset = true;
+			timerForQueueInfect.Enabled = true;
+			
 			//TODO: смоделировать работу, случайное кол-во людей
+			
+			
+			timerForQueueInfect.Stop();
+			timerForQueueInfect.Dispose();
 		}
+		
+		private static void OnTimedEvent(object source, ElapsedEventArgs e)
+		{
+			var infectFlag = false;
+			foreach (var h in _queueToObservationRoom.Where(h => h.IsInfected))
+				infectFlag = true;
+			if (infectFlag)
+				InfectAll();
+		}
+		private static void InfectAll()
+        {
+        	foreach (var human in _queueToObservationRoom)
+        		human.IsInfected = true;
+        }
 	}
 
 	public class ObservationRoom
 	{
 		public int Capacity { get; }
-		public Queue<Human> Queue;
+		public Queue<Human> Queue = new Queue<Human>();
 
 		public ObservationRoom(int capacity)
 		{
