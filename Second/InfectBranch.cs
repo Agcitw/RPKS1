@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Timers;
 using NLog;
 
@@ -13,6 +15,8 @@ namespace Second
 		private List<Doctor> _doctors;
 		public static int LimitOfWaiting { get; private set; }
 		private const int PeriodToInfectAll = 60_000; //ms
+		private const int PeriodToSpawnHuman = 3_000; //ms
+		private readonly int _countOfHumans = new Random().Next(100, 1000);
 		private static readonly Queue<Human> QueueToObservationRoom = new Queue<Human>();
 		
 		public InfectDiseasesDepartment(int n, int m, int t)
@@ -24,7 +28,8 @@ namespace Second
 		
 		public void StartWork()
 		{
-			SetTimer();
+			SetInfectTimer();
+			GenerateNewHumans();
 
 			
 			
@@ -32,32 +37,48 @@ namespace Second
 
 
 
-			StopTimer();
+			StopInfectTimer();
 		}
+
+		private Doctor GetFreeDoctor() =>
+			_doctors.FirstOrDefault(doctor => doctor.IsBusy == false);
 		
+		#region SpawnerOfHumans
 		private void NewPatientToQueue(Human human)
-		{
-			if (_observationRoom.Queue.Count < _observationRoom.Capacity &&
-			    _observationRoom.IsQueueHasInfected() == human.IsInfected)
-				_observationRoom.Queue.Enqueue(human);
-			else
-				QueueToObservationRoom.Enqueue(human);
-		}
+        		{
+        			if (_observationRoom.Queue.Count < _observationRoom.Capacity &&
+        			    _observationRoom.IsQueueHasInfected() == human.IsInfected)
+        				_observationRoom.Queue.Enqueue(human);
+        			else
+        				QueueToObservationRoom.Enqueue(human);
+        		}
+        private async void GenerateNewHumans()
+        {
+        	await Task.Run(() =>
+        	{
+        		for (var i = 0; i < _countOfHumans; i++)
+        		{
+        			Task.Delay(new Random().Next(1000, PeriodToSpawnHuman));
+        			NewPatientToQueue(new Human());
+        		}
+        	});
+        }
+        #endregion
 
-		#region InfectTimer
-		private static void SetTimer()
+        #region InfectTimer
+		private static void SetInfectTimer()
         {
         	_timerForQueueInfect = new Timer(PeriodToInfectAll);
-        	_timerForQueueInfect.Elapsed += OnTimedEvent;
+        	_timerForQueueInfect.Elapsed += OnTimedEventInfect;
         	_timerForQueueInfect.AutoReset = true;
         	_timerForQueueInfect.Enabled = true;
         }
-		private static void StopTimer()
+		private static void StopInfectTimer()
         {
         	_timerForQueueInfect.Stop();
         	_timerForQueueInfect.Dispose();
         }
-		private static void OnTimedEvent(object source, ElapsedEventArgs e)
+		private static void OnTimedEventInfect(object source, ElapsedEventArgs e)
 		{
 			var infectFlag = false;
 			foreach (var h in QueueToObservationRoom.Where(h => h.IsInfected))

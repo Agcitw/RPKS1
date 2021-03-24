@@ -13,6 +13,5 @@ namespace Second
 
 		public bool IsQueueHasInfected() => 
 			Queue.Aggregate(false, (current, human) => current | human.IsInfected);
-		
 	}
 }
