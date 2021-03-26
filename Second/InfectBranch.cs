@@ -1,72 +1,87 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using NLog;
+using Timer = System.Timers.Timer;
 
 namespace Second
 {
 	public class InfectDiseasesDepartment
 	{
-		private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+		public static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 		private static Timer _timerForQueueInfect;
 		private readonly ObservationRoom _observationRoom;
-		private List<Doctor> _doctors;
+		private readonly List<Doctor> _doctors;
 		public static int LimitOfWaiting { get; private set; }
-		private const int PeriodToInfectAll = 60_000; //ms
-		private const int PeriodToSpawnHuman = 3_000; //ms
+		private const int PeriodToInfectAll = 10_000;
+		private const int PeriodToSpawnHuman = 1_000;
 		private readonly int _countOfHumans = new Random().Next(100, 1000);
-		private static readonly Queue<Human> QueueToObservationRoom = new Queue<Human>();
+		public readonly Queue<Human> QueueToObservationRoom = new Queue<Human>();
 		
 		public InfectDiseasesDepartment(int n, int m, int t)
 		{
 			_observationRoom = new ObservationRoom(n);
-			_doctors = new List<Doctor>(m);
+			_doctors = new List<Doctor>();
+			for (var i = 0; i < m; i++)
+				_doctors.Add(new Doctor());
 			LimitOfWaiting = t;
+			Logger.Info("Created infect deseases departament");
 		}
 		
 		public void StartWork()
 		{
+			Logger.Info("Work with patients was started");
 			SetInfectTimer();
 			GenerateNewHumans();
-
-			
-			
-
-
-
-
+			Thread.Sleep(5_000);
+			_observationRoom.StartHelpPatients(_doctors, this);
 			StopInfectTimer();
 		}
 
-		private Doctor GetFreeDoctor() =>
-			_doctors.FirstOrDefault(doctor => doctor.IsBusy == false);
-		
+		public Doctor GetFreeDoctor()
+		{
+			Doctor freeDoctor;
+			while (true)
+			{
+				freeDoctor = _doctors.FirstOrDefault(doctor => !doctor.IsBusy);
+				if (freeDoctor != null) break;
+			}
+			return freeDoctor;
+		}
+
 		#region SpawnerOfHumans
 		private void NewPatientToQueue(Human human)
-        		{
-        			if (_observationRoom.Queue.Count < _observationRoom.Capacity &&
-        			    _observationRoom.IsQueueHasInfected() == human.IsInfected)
-        				_observationRoom.Queue.Enqueue(human);
-        			else
-        				QueueToObservationRoom.Enqueue(human);
-        		}
+        {
+        	if (_observationRoom.Queue.Count < _observationRoom.Capacity &&
+        	    _observationRoom.IsQueueHasInfected() == human.IsInfected ||
+                _observationRoom.Queue.Count == 0)
+            {
+	            _observationRoom.Queue.Enqueue(human);
+	            Logger.Info($"New patient in observation room: isInfected={human.IsInfected}, isSpecial={human.IsSpecial}");
+            }
+        	else
+            {
+	            QueueToObservationRoom.Enqueue(human);
+	            Logger.Info($"New patient in queue to observation room: isInfected={human.IsInfected}, isSpecial={human.IsSpecial}");
+            }
+        }
         private async void GenerateNewHumans()
         {
         	await Task.Run(() =>
         	{
         		for (var i = 0; i < _countOfHumans; i++)
         		{
-        			Task.Delay(new Random().Next(1000, PeriodToSpawnHuman));
+        			Thread.Sleep(new Random().Next(PeriodToSpawnHuman));
         			NewPatientToQueue(new Human());
         		}
         	});
         }
         #endregion
-
         #region InfectTimer
-		private static void SetInfectTimer()
+		private void SetInfectTimer()
         {
         	_timerForQueueInfect = new Timer(PeriodToInfectAll);
         	_timerForQueueInfect.Elapsed += OnTimedEventInfect;
@@ -78,19 +93,20 @@ namespace Second
         	_timerForQueueInfect.Stop();
         	_timerForQueueInfect.Dispose();
         }
-		private static void OnTimedEventInfect(object source, ElapsedEventArgs e)
+		private void OnTimedEventInfect(object source, ElapsedEventArgs e)
 		{
 			var infectFlag = false;
-			foreach (var h in QueueToObservationRoom.Where(h => h.IsInfected))
+			foreach (var unused in QueueToObservationRoom.Where(h => h.IsInfected))
 				infectFlag = true;
 			if (infectFlag)
 				InfectAll();
 		}
-		private static void InfectAll()
+		private void InfectAll()
         {
         	foreach (var human in QueueToObservationRoom)
         		human.IsInfected = true;
-            Logger.Info("All in queue are infected");
+            if (QueueToObservationRoom.Count != 0) 
+	            Logger.Info($"{QueueToObservationRoom.Count} humans are infected");
         }
 		#endregion
 	}

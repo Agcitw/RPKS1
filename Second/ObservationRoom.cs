@@ -11,7 +11,19 @@ namespace Second
 		public ObservationRoom(int capacity) =>
 			Capacity = capacity;
 
-		public bool IsQueueHasInfected() => 
-			Queue.Aggregate(false, (current, human) => current | human.IsInfected);
+		public bool IsQueueHasInfected() =>
+			Queue.Any(human => human.IsInfected);
+
+		public void StartHelpPatients(List<Doctor> doctors, InfectDiseasesDepartment branch)
+		{
+			while (branch.QueueToObservationRoom.Count != 0 || Queue.Count != 0)
+			{
+				var doctor = doctors.FirstOrDefault(d => !d.IsBusy);
+				if (doctor == null) continue;
+				doctor.WorkWithPatient(Queue.Dequeue(), branch);
+				if (branch.QueueToObservationRoom.Count != 0)
+					Queue.Enqueue(branch.QueueToObservationRoom.Dequeue());
+			}
+		}
 	}
 }

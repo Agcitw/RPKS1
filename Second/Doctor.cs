@@ -5,22 +5,24 @@ namespace Second
 {
 	public class Doctor
 	{
-		public bool IsBusy = false;
+		public bool IsBusy;
 
-		public async void WorkWithPatient(Human human)
+		public async void WorkWithPatient(Human human, InfectDiseasesDepartment branch)
 		{
 			IsBusy = true;
-
+			Doctor doctorForHelp = null;
 			if (human.IsSpecial)
 			{
-				//TODO: позвать др доктора
+				human.IsSpecial = false;
+				doctorForHelp = branch.GetFreeDoctor();
+				doctorForHelp.IsBusy = true;
+				InfectDiseasesDepartment.Logger.Info("Called second doctor for help");
 			}
-
-			await Task.Delay(new Random().Next(1, InfectDiseasesDepartment.LimitOfWaiting));
-			
-			//удалить из очереди
-			//log
-			
+			var time = new Random().Next(1000, InfectDiseasesDepartment.LimitOfWaiting);
+			human.IsInfected = false;
+			await Task.Delay(time);
+			InfectDiseasesDepartment.Logger.Info($"Human is healthy, awaiting time={time}");
+			if (doctorForHelp != null) doctorForHelp.IsBusy = false;
 			IsBusy = false;
 		}
 	}
