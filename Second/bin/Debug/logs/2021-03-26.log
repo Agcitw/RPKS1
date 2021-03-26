@@ -1,0 +1,155 @@
+2021-03-26 19:42:43.7538 INFO Created infect deseases departament
+2021-03-26 19:42:43.7728 INFO Work with patients was started
+2021-03-26 19:42:44.3207 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:44.6339 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:44.9417 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:45.7691 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:46.1577 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:46.4547 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:46.9091 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:47.0191 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:47.4377 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:47.9670 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:48.4187 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:48.5267 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:48.5888 INFO New patient in observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:49.5629 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:50.2381 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:50.3471 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:50.3951 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:51.0022 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:51.9235 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:52.3598 INFO Human is healthy, awaiting time=3561
+2021-03-26 19:42:52.3598 INFO Human is healthy, awaiting time=3561
+2021-03-26 19:42:52.3598 INFO Human is healthy, awaiting time=3561
+2021-03-26 19:42:52.3598 INFO Human is healthy, awaiting time=3561
+2021-03-26 19:42:52.3598 INFO Human is healthy, awaiting time=3561
+2021-03-26 19:42:52.5278 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:53.2820 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:53.8582 INFO New patient in queue to observation room: isInfected=False, isSpecial=True
+2021-03-26 19:42:54.4063 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:54.7174 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:55.5366 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:55.9287 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:56.0707 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:56.8689 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:57.0389 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:57.0689 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:57.3040 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:57.7851 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:58.6423 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:58.8923 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:42:59.7475 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:42:59.9036 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:00.5487 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:01.0668 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:02.0038 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:02.4529 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:02.7190 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:02.9520 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:03.4211 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:03.9222 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:04.6236 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:05.5938 INFO New patient in observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:05.7988 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:06.0519 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:06.7440 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:06.8691 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:07.2932 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:08.1834 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:09.0350 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:09.1750 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:09.4551 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:09.6921 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:10.5373 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:11.3085 INFO New patient in queue to observation room: isInfected=False, isSpecial=True
+2021-03-26 19:43:11.7453 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:11.9944 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:12.8586 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:13.4867 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:13.7959 INFO 37 humans are infected
+2021-03-26 19:43:13.9870 INFO New patient in queue to observation room: isInfected=False, isSpecial=True
+2021-03-26 19:43:14.3327 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:14.7555 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:15.1274 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:15.3945 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:15.6285 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:16.1107 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:16.6108 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:17.3210 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:17.6671 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:17.7151 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:18.3232 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:19.0855 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:20.0230 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:20.4760 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:20.5850 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:21.1612 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:21.7053 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:22.6564 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:23.4825 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:23.7976 INFO 57 humans are infected
+2021-03-26 19:43:23.8766 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:24.5338 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:25.2594 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:26.0935 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:27.0147 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:27.0937 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:27.4368 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:28.3290 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:28.3450 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:28.7171 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:29.0012 INFO New patient in queue to observation room: isInfected=True, isSpecial=True
+2021-03-26 19:43:29.0952 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:29.2852 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:29.5383 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:30.3936 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:31.0199 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:31.1610 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:31.9561 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:32.1302 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:32.6363 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:33.3583 INFO New patient in queue to observation room: isInfected=False, isSpecial=True
+2021-03-26 19:43:33.7023 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:33.7643 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:33.8113 INFO 80 humans are infected
+2021-03-26 19:43:34.2053 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:34.4725 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:34.5358 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:35.5215 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:35.5695 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:36.1646 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:37.0898 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:37.6860 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:38.0813 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:38.1123 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:38.9785 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:39.9637 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:40.5308 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:40.7049 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:40.7359 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:40.9689 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:41.9613 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:42.3867 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:42.7478 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:43.1914 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:43.2554 INFO Human is healthy, awaiting time=50878
+2021-03-26 19:43:43.2554 INFO Human is healthy, awaiting time=50878
+2021-03-26 19:43:43.2554 INFO Human is healthy, awaiting time=50878
+2021-03-26 19:43:43.2714 INFO Human is healthy, awaiting time=50878
+2021-03-26 19:43:43.2874 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:43.4935 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:43.7476 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:43.8116 INFO 99 humans are infected
+2021-03-26 19:43:44.6087 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:45.2297 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:45.3707 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:46.1688 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:46.3398 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:46.3709 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:46.6059 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:47.0800 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:47.5761 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:48.2823 INFO New patient in queue to observation room: isInfected=False, isSpecial=False
+2021-03-26 19:43:49.2521 INFO New patient in queue to observation room: isInfected=True, isSpecial=False
+2021-03-26 19:43:49.4561 INFO New patient in queue to observation room: isInfected=False, isSpecial=False

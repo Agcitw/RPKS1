@@ -11,8 +11,9 @@ namespace Second
 
 		public Human()
 		{
-			var n1 = new Random().Next(0, 100);
-			var n2 = new Random().Next(0, 100);
+			var rand = new Random();
+			var n1 = rand.Next(0, 100);
+			var n2 = rand.Next(0, 100);
 			const double p1 = ProbabilityForInf * 100;
 			const double p2 = ProbabilityForSpec * 100;
 			IsInfected = n1 <= p1;

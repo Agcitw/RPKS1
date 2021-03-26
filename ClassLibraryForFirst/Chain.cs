@@ -1,6 +1,6 @@
 ﻿namespace ClassLibrary
 {
-	public abstract class ElementOfChain
+	public abstract class ElementOfChain //<T>
 	{
 		public ElementOfChain Successor { get; set; }
 		public abstract void Handle(object data);
