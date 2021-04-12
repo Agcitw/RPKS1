@@ -13,5 +13,4 @@ C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\MainWindow.g.cs
 C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\App.g.cs
 C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\Third_Content.g.cs
 C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\MainWindow.baml
-C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\anton\RiderProjects\RPKS1\Third\obj\Debug\Third_MarkupCompile.lref

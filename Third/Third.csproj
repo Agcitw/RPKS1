@@ -74,6 +74,12 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Conditions\Задание.txt" />
+      <Resource Include="Images\botimage (2).jpeg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Images\Apex-Legends-HD-Wallpapers-and-Background-Images-Wallpaper-Cart.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
     <ItemGroup>
       <ApplicationDefinition Include="App.xaml">
