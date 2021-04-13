@@ -11,8 +11,9 @@
                          Color="Black"></SolidColorBrush>
             <SolidColorBrush x:Key="ColorBrushBackground" 
                              Color="White"></SolidColorBrush>
+        <BitmapImage x:Key="ButtonBitmapImage" UriSource="Images/Apex-Legends-HD-Wallpapers-and-Background-Images-Wallpaper-Cart.png"></BitmapImage>
             <Image x:Key="MyImage"
-                   Source="Images/Apex-Legends-HD-Wallpapers-and-Background-Images-Wallpaper-Cart.png"
+                   Source="{DynamicResource ButtonBitmapImage}"
                    Height="{Binding ElementName=SliderH,Path=Value}"
                    Width="{Binding ElementName=SliderW,Path=Value}">
             </Image>

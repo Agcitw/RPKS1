@@ -1,4 +1,4 @@
-﻿namespace ThirdPartTwo_Elements
+﻿namespace ThirdPartTwo_Elements.Views
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

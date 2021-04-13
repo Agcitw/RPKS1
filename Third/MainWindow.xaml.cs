@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Microsoft.Win32;
 
 namespace Third
 {
@@ -15,7 +16,6 @@ namespace Third
 			InitializeComponent();
 		}
 
-		private int _imageInd = 1;
 		private readonly List<SolidColorBrush> _colorBrushesForeground = new List<SolidColorBrush>()
 		{
         	new SolidColorBrush(Colors.DarkBlue),
@@ -75,11 +75,11 @@ namespace Third
 
 		private void ChangeImage_OnClick(object sender, RoutedEventArgs e)
 		{
-			var b1 = new BitmapImage(new Uri("Images/botimage (2).jpeg", UriKind.Relative));
-			var b2 = new BitmapImage(new Uri("Images/Apex-Legends-HD-Wallpapers-and-Background-Images-Wallpaper-Cart.png", UriKind.Relative));
-			var img = new Image {Source = _imageInd == 0 ? b1 : b2};
-			_imageInd = _imageInd == 0 ? 1 : 0;
-			Resources[@"MyImage"] = img;
+			var openFileDialog = new OpenFileDialog();
+			if (openFileDialog.ShowDialog() != true) return;
+			var filePath = openFileDialog.FileName;
+			var bitmapImage = new BitmapImage(new Uri(filePath));
+			Resources[@"ButtonBitmapImage"] = bitmapImage;
 		}
 	}
 }
