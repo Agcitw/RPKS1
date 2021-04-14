@@ -13,7 +13,7 @@
 	</UserControl.DataContext>
 	
 	<UserControl.Resources>
-	    <Style TargetType="Ellipse">
+		<Style TargetType="Ellipse">
 		    <Setter Property="Fill"
 		            Value="{Binding SpinnerModel.ColourOfDots}"></Setter>
 		    <Setter Property="Width"
@@ -122,7 +122,7 @@
 	</UserControl.Triggers>
 	
 	<UserControl.Content>
-		<Canvas x:Name="Spinner1" HorizontalAlignment="Center" Width="24" Height="24">
+		<Canvas HorizontalAlignment="Center" Width="24" Height="24">
 			<Ellipse x:Name="Ellipse01" Canvas.Top="10" />
 			<Ellipse x:Name="Ellipse02" Canvas.Top="5" Canvas.Left="1.33975" />
 			<Ellipse x:Name="Ellipse03" Canvas.Top="1.4" Canvas.Left="5"/>

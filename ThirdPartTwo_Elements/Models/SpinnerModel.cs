@@ -19,7 +19,7 @@ namespace ThirdPartTwo_Elements.Models
 			set
 			{
 				_countOfDots = value;
-				OnPropertyChanged();
+				OnPropertyChanged(nameof(ColourOfDots));
 			}
 		}
 
@@ -29,7 +29,7 @@ namespace ThirdPartTwo_Elements.Models
 			set
 			{
 				_sizeOfDots = value;
-				OnPropertyChanged();
+				OnPropertyChanged(nameof(SizeOfDots));
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace ThirdPartTwo_Elements.Models
 			set
 			{
 				_colourOfDots = value;
-				OnPropertyChanged();
+				OnPropertyChanged(nameof(ColourOfDots));
 			} 
 		}
 
@@ -49,7 +49,7 @@ namespace ThirdPartTwo_Elements.Models
 			set
 			{
 				_clockwiseMovement = value;
-				OnPropertyChanged();
+				OnPropertyChanged(nameof(ClockwiseMovement));
 			}
 		}
 
@@ -59,10 +59,9 @@ namespace ThirdPartTwo_Elements.Models
 			set 
 			{
 				_velocity = value;
-				OnPropertyChanged();
+				OnPropertyChanged(nameof(Velocity));
 		    }
 		}
-
 
 		public event PropertyChangedEventHandler PropertyChanged;
 

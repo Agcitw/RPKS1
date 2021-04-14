@@ -47,6 +47,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Models\SpinnerModel.cs" />
+        <Compile Include="ModelViews\Commands\RelayCommand.cs" />
         <Compile Include="ModelViews\SpinnerViewModel.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Views\App.xaml.cs">
