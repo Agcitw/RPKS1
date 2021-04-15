@@ -63,6 +63,8 @@ namespace ThirdPartTwo_Elements.Models
 		    }
 		}
 
+		
+		
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		[NotifyPropertyChangedInvocator]
