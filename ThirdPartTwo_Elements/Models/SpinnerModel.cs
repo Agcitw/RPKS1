@@ -66,7 +66,7 @@ namespace ThirdPartTwo_Elements.Models
 		
 		
 		public event PropertyChangedEventHandler PropertyChanged;
-
+		
 		[NotifyPropertyChangedInvocator]
 		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{

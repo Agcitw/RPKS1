@@ -46,13 +46,18 @@
         <Reference Include="PresentationFramework" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Models\DialogHostModel.cs" />
         <Compile Include="Models\SpinnerModel.cs" />
         <Compile Include="ModelViews\Commands\RelayCommand.cs" />
+        <Compile Include="ModelViews\DialogHostViewModel.cs" />
         <Compile Include="ModelViews\SpinnerViewModel.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Views\App.xaml.cs">
           <DependentUpon>App.xaml</DependentUpon>
           <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Views\DialogHostElement.xaml.cs">
+          <DependentUpon>DialogHostElement.xaml</DependentUpon>
         </Compile>
         <Compile Include="Views\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -86,6 +91,7 @@
       </ApplicationDefinition>
     </ItemGroup>
     <ItemGroup>
+      <Page Include="Views\DialogHostElement.xaml" />
       <Page Include="Views\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>

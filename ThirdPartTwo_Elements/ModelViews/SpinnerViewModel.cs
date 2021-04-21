@@ -1,14 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using ThirdPartTwo_Elements.Annotations;
 using ThirdPartTwo_Elements.Models;
 using ThirdPartTwo_Elements.ModelViews.Commands;
-using ThirdPartTwo_Elements.Views;
 
 namespace ThirdPartTwo_Elements.ModelViews
 {
@@ -35,12 +32,6 @@ namespace ThirdPartTwo_Elements.ModelViews
 			_spinnerModel.Velocity = 1.0;
 		}
 
-		public SolidColorBrush PropColor => _spinnerModel.ColourOfDots;
-		public int PropCount => _spinnerModel.CountOfDots;
-		public int PropSize => _spinnerModel.SizeOfDots;
-		public bool PropClock => _spinnerModel.ClockwiseMovement;
-		public double PropVelocity => _spinnerModel.Velocity;
-
 		public ICommand ButtonUpClicked =>
 			new RelayCommand(_ => _spinnerModel.SizeOfDots++, o => _spinnerModel.SizeOfDots < 20);
 		
@@ -51,15 +42,11 @@ namespace ThirdPartTwo_Elements.ModelViews
 			new RelayCommand(_ => 
 				_spinnerModel.ColourOfDots = new SolidColorBrush(Color.FromArgb(
 					255,
-					(byte)new Random().Next(256),
-					(byte)new Random().Next(256),
-					(byte)new Random().Next(256)
+					(byte)new Random().Next(200, 256),
+					(byte)new Random().Next(0, 108),
+					(byte)new Random().Next(0, 256)
 				)));
 		
-		
-		
-		
-
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		[NotifyPropertyChangedInvocator]

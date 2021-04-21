@@ -15,11 +15,11 @@
 	<UserControl.Resources>
 		<Style TargetType="Ellipse">
 		    <Setter Property="Fill"
-		            Value="{Binding PropColor}"></Setter>
+		            Value="{Binding SpinnerModel.ColourOfDots}"></Setter>
 		    <Setter Property="Width"
-		            Value="{Binding PropSize}"></Setter>
+		            Value="{Binding SpinnerModel.SizeOfDots}"></Setter>
 		    <Setter Property="Height"
-		            Value="{Binding PropSize}"></Setter>
+		            Value="{Binding SpinnerModel.SizeOfDots}"></Setter>
 		    <Setter Property="Opacity"
 		            Value="0"></Setter>
 	    </Style>
