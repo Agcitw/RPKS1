@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="ThirdPartTwo_Elements.Views.DialogHostElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:ThirdPartTwo_Elements.ModelViews"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vm:DialogHostViewModel></vm:DialogHostViewModel>
+    </UserControl.DataContext>
+    
+    <Border Background="Black"
+            CornerRadius="{Binding DialogHostModel.Radius}">
+            <Border.InputBindings>
+                <MouseBinding 
+                    MouseAction="LeftClick" 
+                    Command="{Binding OpenDialogCommand}"></MouseBinding>
+            </Border.InputBindings>
+            <Border Background="White" Opacity="{Binding DialogHostModel.Transparency}">
+                <ContentPresenter>
+                    
+                </ContentPresenter>
+            </Border>
+        </Border>
+</UserControl>
