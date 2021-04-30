@@ -1,17 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows.Media;
-using ThirdPartTwo_Elements.Annotations;
 using ThirdPartTwo_Elements.Models;
+using ThirdPartTwo_Elements.ModelViews.BaseLib;
 using ThirdPartTwo_Elements.ModelViews.Commands;
 
 namespace ThirdPartTwo_Elements.ModelViews
 {
-	public sealed class SpinnerViewModel : INotifyPropertyChanged
+	public sealed class SpinnerViewModel : BaseViewModel
 	{
-		private SpinnerModel _spinnerModel = new SpinnerModel();
+		private static SpinnerModel _spinnerModel = new SpinnerModel();
 
 		public SpinnerModel SpinnerModel
 		{
@@ -25,7 +23,7 @@ namespace ThirdPartTwo_Elements.ModelViews
 		
 		public SpinnerViewModel()
 		{
-			_spinnerModel.ColourOfDots = new SolidColorBrush(Colors.LightPink);
+			_spinnerModel.ColourOfDots = new SolidColorBrush(Colors.Coral);
 			_spinnerModel.CountOfDots = 12;
 			_spinnerModel.SizeOfDots = 4;
 			_spinnerModel.ClockwiseMovement = true;
@@ -45,14 +43,7 @@ namespace ThirdPartTwo_Elements.ModelViews
 					(byte)new Random().Next(200, 256),
 					(byte)new Random().Next(0, 108),
 					(byte)new Random().Next(0, 256)
-				)));
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-
-		[NotifyPropertyChangedInvocator]
-		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		}
+				))
+			);
 	}
 }

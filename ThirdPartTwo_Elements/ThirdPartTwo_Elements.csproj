@@ -47,9 +47,15 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Models\DialogHostModel.cs" />
+        <Compile Include="Models\SpinnerDialogModel.cs" />
         <Compile Include="Models\SpinnerModel.cs" />
+        <Compile Include="ModelViews\BaseLib\BaseViewModel.cs" />
+        <Compile Include="ModelViews\BaseLib\Converters.cs" />
+        <Compile Include="ModelViews\BaseLib\ConverterBase.cs" />
+        <Compile Include="ModelViews\BaseLib\MultiConverterBase.cs" />
         <Compile Include="ModelViews\Commands\RelayCommand.cs" />
         <Compile Include="ModelViews\DialogHostViewModel.cs" />
+        <Compile Include="ModelViews\SpinnerDialogViewModel.cs" />
         <Compile Include="ModelViews\SpinnerViewModel.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Views\App.xaml.cs">
@@ -65,6 +71,9 @@
         </Compile>
         <Compile Include="Views\Spinner.xaml.cs">
           <DependentUpon>Spinner.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Views\SpinnerDialog.xaml.cs">
+          <DependentUpon>SpinnerDialog.xaml</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>
@@ -97,6 +106,7 @@
         <SubType>Designer</SubType>
       </Page>
       <Page Include="Views\Spinner.xaml" />
+      <Page Include="Views\SpinnerDialog.xaml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,8 +15,7 @@ namespace ThirdPartTwo_Elements.Views
 			get => (RelayCommand)GetValue(CommandProperty);
 			set => SetValue(CommandProperty, value);
 		}
-
-
+		
 		private readonly DialogHostViewModel _mainDataContext;
 		public DialogHostElement()
 		{
@@ -30,6 +29,5 @@ namespace ThirdPartTwo_Elements.Views
 		{
 			_mainDataContext.OpenDialogCommand = Command;
 		}
-
 	}
 }
