@@ -20,3 +20,5 @@ C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\DialogH
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\DialogHostElement.baml
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\SpinnerDialog.g.cs
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\SpinnerDialog.baml
+C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\MessageDialog.g.cs
+C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\MessageDialog.baml

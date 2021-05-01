@@ -23,7 +23,7 @@ namespace ThirdPartTwo_Elements.ModelViews
 			new RelayCommand(_ => _spinnerDialogModel.FontSize++, _ => _spinnerDialogModel.FontSize < 30);
 		public ICommand OnTextSizeDown =>
 			new RelayCommand(_ => _spinnerDialogModel.FontSize--, _ => _spinnerDialogModel.FontSize > 1);
-		public static ICommand OnTextChanged =>
+		public ICommand OnTextChanged =>
 			new RelayCommand(str => _spinnerDialogModel.Text = str as string);
 	}
 }

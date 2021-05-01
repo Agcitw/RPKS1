@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Content>
-        <v:DialogHostElement Grid.Row="0">
+        <v:DialogHostElement>
             <Grid>
                 <Grid.DataContext>
                     <vm:SpinnerDialogViewModel></vm:SpinnerDialogViewModel>

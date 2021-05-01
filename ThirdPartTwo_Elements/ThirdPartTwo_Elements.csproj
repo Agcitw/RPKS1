@@ -47,6 +47,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Models\DialogHostModel.cs" />
+        <Compile Include="Models\MessageDialogModel.cs" />
         <Compile Include="Models\SpinnerDialogModel.cs" />
         <Compile Include="Models\SpinnerModel.cs" />
         <Compile Include="ModelViews\BaseLib\BaseViewModel.cs" />
@@ -55,6 +56,7 @@
         <Compile Include="ModelViews\BaseLib\MultiConverterBase.cs" />
         <Compile Include="ModelViews\Commands\RelayCommand.cs" />
         <Compile Include="ModelViews\DialogHostViewModel.cs" />
+        <Compile Include="ModelViews\MessageDialogViewModel.cs" />
         <Compile Include="ModelViews\SpinnerDialogViewModel.cs" />
         <Compile Include="ModelViews\SpinnerViewModel.cs" />
         <Compile Include="Properties\Annotations.cs" />
@@ -68,6 +70,9 @@
         <Compile Include="Views\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Views\MessageDialog.xaml.cs">
+          <DependentUpon>MessageDialog.xaml</DependentUpon>
         </Compile>
         <Compile Include="Views\Spinner.xaml.cs">
           <DependentUpon>Spinner.xaml</DependentUpon>
@@ -105,6 +110,7 @@
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
+      <Page Include="Views\MessageDialog.xaml" />
       <Page Include="Views\Spinner.xaml" />
       <Page Include="Views\SpinnerDialog.xaml" />
     </ItemGroup>

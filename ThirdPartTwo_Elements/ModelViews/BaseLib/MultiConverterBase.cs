@@ -14,7 +14,7 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 
 		public abstract object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);
 
-		public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+		public virtual object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
 		{
 			throw new NotImplementedException();
 		}
