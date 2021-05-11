@@ -10,17 +10,17 @@ namespace ThirdPartTwo_Elements.Views
 	{
 		private readonly List<SolidColorBrush> _colorBrushesScroll = new()
 		{
-			new(Colors.Green),
-			new(Colors.Red),
-			new(Colors.Yellow),
-			new(Colors.Orange),
-			new(Colors.Pink),
-			new(Colors.RosyBrown),
-			new(Colors.Gold),
-			new(Colors.Orchid),
-			new(Colors.Lime),
-			new(Colors.GreenYellow),
-			new(Colors.CornflowerBlue)
+			new SolidColorBrush(Colors.Green),
+			new SolidColorBrush(Colors.Red),
+			new SolidColorBrush(Colors.Yellow),
+			new SolidColorBrush(Colors.Orange),
+			new SolidColorBrush(Colors.Pink),
+			new SolidColorBrush(Colors.RosyBrown),
+			new SolidColorBrush(Colors.Gold),
+			new SolidColorBrush(Colors.Orchid),
+			new SolidColorBrush(Colors.Lime),
+			new SolidColorBrush(Colors.GreenYellow),
+			new SolidColorBrush(Colors.CornflowerBlue)
 		};
 
 		public MessageDialog()

@@ -13,10 +13,10 @@ namespace ThirdPartTwo_Elements.ModelViews
 	{
 		private static readonly List<SolidColorBrush> ListColors = new()
 		{
-			new(Colors.Aqua),
-			new(Colors.Wheat),
-			new(Colors.White),
-			new(Colors.LightGreen)
+			new SolidColorBrush(Colors.Aqua),
+			new SolidColorBrush(Colors.Wheat),
+			new SolidColorBrush(Colors.White),
+			new SolidColorBrush(Colors.LightGreen)
 		};
 
 		private static readonly List<ICommand> ListCommands = new()

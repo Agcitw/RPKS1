@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="LetterKeyboardAndDemoNavigationManager.Controls.LetterKeyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="300">
+    <UserControl.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center">
+                    <Control>
+                        <Control.Template>
+                            <ControlTemplate>
+                                <Button Click="CapsClicked"
+                                        x:Name="CapsButton">
+                                    CapsLock
+                                </Button>
+                                <ControlTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=_this, Path=IsCapsChecked}" 
+                                                 Value="True">
+                                        <Setter TargetName="CapsButton" 
+                                                Property="Style"
+                                                Value="{Binding Path=CapsOnStyle, ElementName=_this}" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=_this, Path=IsCapsChecked}" 
+                                                 Value="False">
+                                        <Setter TargetName="CapsButton" 
+                                                Property="Style"
+                                                Value="{Binding Path=CapsOffStyle, ElementName=_this}" />
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Control.Template>
+                    </Control>
+                    <Button Command="{Binding Path=CCommand, ElementName=_this}"
+                            Style="{Binding Path=CStyle, ElementName=_this}">
+                        BackSpace
+                    </Button>
+                    <Button Command="ApplicationCommands.Replace">
+                        ChangeLanguage
+                    </Button>
+                    <Button Command="{Binding Path=EnterCommand, ElementName=_this}"
+                            Style="{Binding Path=EnterStyle, ElementName=_this}">
+                        Enter
+                    </Button>
+                </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <ItemsControl x:Name="Items0" 
+                              VerticalAlignment="Center" 
+                              HorizontalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ItemsControl x:Name="Items1" 
+                              VerticalAlignment="Center" 
+                              HorizontalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ItemsControl x:Name="Items2" 
+                              VerticalAlignment="Center" 
+                              HorizontalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <Button HorizontalAlignment="Center"
+                        MinWidth="200">Space</Button>
+            </StackPanel>
+        </Grid>
+    </UserControl.Content>
+</UserControl>

@@ -14,24 +14,6 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 
 		private bool CanGoBack => _navigationService.CanGoBack;
 
-		public void NavigateWithNavigationManager<TView, TViewModel>() where TView : Page, new()
-			where TViewModel : BaseViewModelNavigation, new()
-		{
-			Page page = new TView();
-			BaseViewModelNavigation viewModel = new TViewModel();
-			viewModel.NavigationManager = this;
-			page.DataContext = viewModel;
-			_navigationService.Navigate(page);
-		}
-
-		public void GoBack()
-		{
-			if (!CanGoBack) return;
-			_navigationService.GoBack();
-		}
-
-		#region Navigate
-
 		public bool Navigate<TView>(BaseViewModel viewModel) where TView : Page, new()
 		{
 			Page page = new TView();
@@ -57,6 +39,20 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 			return true;
 		}
 
-		#endregion
+		public void NavigateWithNavigationManager<TView, TViewModel>() where TView : Page, new()
+			where TViewModel : BaseViewModelNavigation, new()
+		{
+			Page page = new TView();
+			BaseViewModelNavigation viewModel = new TViewModel();
+			viewModel.NavigationManager = this;
+			page.DataContext = viewModel;
+			_navigationService.Navigate(page);
+		}
+
+		public void GoBack()
+		{
+			if (!CanGoBack) return;
+			_navigationService.GoBack();
+		}
 	}
 }
