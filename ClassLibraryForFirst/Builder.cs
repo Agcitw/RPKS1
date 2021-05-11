@@ -3,8 +3,12 @@
 	public abstract class Builder<T>
 	{
 		protected Validator<T> Validator { get; } = new Validator<T>();
-		public Validator<T> GetResult() => 
-			Validator;
+
+		public Validator<T> GetResult()
+		{
+			return Validator;
+		}
+
 		public abstract void Build();
 	}
 
@@ -17,11 +21,13 @@
 				Validator.AddCheckOnZero();
 				Validator.AddCheckOnPositiveNumber();
 			}
+
 			if (typeof(T) == typeof(string))
 			{
 				Validator.AddCheckOnNotNull();
 				Validator.AddCheckOnStringWithoutUpperChars();
 			}
+
 			Validator.FormTheChain();
 		}
 	}

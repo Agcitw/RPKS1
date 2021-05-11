@@ -28,8 +28,8 @@ namespace ThirdPartTwo_Elements.Views
 
 		private void ComboBoxCommands_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var comboBox = (ComboBox)sender;
-			var selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+			var comboBox = (ComboBox) sender;
+			var selectedItem = (ComboBoxItem) comboBox.SelectedItem;
 			var com = selectedItem.Content.ToString();
 			switch (com)
 			{
@@ -49,8 +49,8 @@ namespace ThirdPartTwo_Elements.Views
 
 		private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var comboBox = (ComboBox)sender;
-			var selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+			var comboBox = (ComboBox) sender;
+			var selectedItem = (ComboBoxItem) comboBox.SelectedItem;
 			var com = selectedItem.Content.ToString();
 			switch (com)
 			{

@@ -7,192 +7,218 @@
         xmlns:vm="clr-namespace:ThirdPartTwo_Elements.ModelViews"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    
-        <Window.Content>
-            <TabControl>
-                <TabItem Header="MessageDialog">
-                    <Grid>
-                        <Grid.DataContext>
-                            <vm:MessageDialogViewModel x:Name="MesVm"></vm:MessageDialogViewModel>
-                        </Grid.DataContext>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <views:MessageDialog x:Name="MessageDialog" 
-                                             Grid.Row="0"></views:MessageDialog>
-                        <Grid Grid.Row="1">
+
+    <Window.Content>
+        <TabControl>
+            <TabItem Header="NumericKeyboard">
+                <Grid>
+                    <Grid.DataContext>
+                        <vm:NumericKeyboardViewModel />
+                    </Grid.DataContext>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <views:NumericKeyboard Grid.Row="0" />
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Margin="10"
+                                Grid.Column="0"
+                                Content="Change styles"
+                                Command="{Binding OnChangeStyle}" />
+                        <Button Margin="10"
+                                Grid.Column="1"
+                                Content="Change commands"
+                                Command="{Binding OnChangeCommand}" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="MessageDialog">
+                <Grid>
+                    <Grid.DataContext>
+                        <vm:MessageDialogViewModel x:Name="MesVm" />
+                    </Grid.DataContext>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <views:MessageDialog x:Name="MessageDialog"
+                                         Grid.Row="0" />
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                            <TextBox x:Name="BoxWithText"
+                                     TextWrapping="Wrap"
+                                     MinWidth="100"
+                                     MinHeight="60"
+                                     Text="{Binding MessageDialogModel.TextInTextBlock}" />
+                            <Button Content="Accept"
+                                    Click="ButtonMessage_OnClick" />
+                        </StackPanel>
+                        <Grid Grid.Column="1" Background="White" MaxWidth="50" MaxHeight="35">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition />
+                                <ColumnDefinition MaxWidth="20" />
                             </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" 
-                                        VerticalAlignment="Center" 
-                                        HorizontalAlignment="Center">
-                                <TextBox x:Name="BoxWithText"
-                                         TextWrapping="Wrap" 
-                                         MinWidth="100"
-                                         MinHeight="60"
-                                         Text="{Binding MessageDialogModel.TextInTextBlock}"></TextBox>
-                                <Button Content="Accept"
-                                        Click="ButtonMessage_OnClick"></Button>
-                            </StackPanel>
-                            <Grid Grid.Column="1" Background="White" MaxWidth="50" MaxHeight="35">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition MaxWidth="20"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
-                                           Text="{Binding MessageDialogModel.FontSize}"
-                                           HorizontalAlignment="Center" 
-                                           VerticalAlignment="Center"></TextBlock>
-                                <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding OnButtonUp}"/>
-                                <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding OnButtonDown}"/>
-                            </Grid>
-                            <ComboBox Grid.Column="2"
-                                      SelectionChanged="Selector_OnSelectionChanged"
+                            <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                       Text="{Binding MessageDialogModel.FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center" />
+                            <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding OnButtonUp}" />
+                            <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding OnButtonDown}" />
+                        </Grid>
+                        <ComboBox Grid.Column="2"
+                                  SelectionChanged="Selector_OnSelectionChanged"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  MinWidth="70">
+                            <ComboBoxItem>Ok</ComboBoxItem>
+                            <ComboBoxItem>YesNo</ComboBoxItem>
+                            <ComboBoxItem>OkCancel</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ComboBox SelectionChanged="ComboBoxCommands_OnSelectionChanged"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"
                                       MinWidth="70">
-                                <ComboBoxItem>Ok</ComboBoxItem>
-                                <ComboBoxItem>YesNo</ComboBoxItem>
-                                <ComboBoxItem>OkCancel</ComboBoxItem>
+                                <ComboBoxItem>Nothing</ComboBoxItem>
+                                <ComboBoxItem>DoubleText</ComboBoxItem>
+                                <ComboBoxItem>RemoveText</ComboBoxItem>
                             </ComboBox>
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <ComboBox SelectionChanged="ComboBoxCommands_OnSelectionChanged"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          MinWidth="70">
-                                    <ComboBoxItem>Nothing</ComboBoxItem>
-                                    <ComboBoxItem>DoubleText</ComboBoxItem>
-                                    <ComboBoxItem>RemoveText</ComboBoxItem>
-                                </ComboBox>
-                                <Button Content="Accept" Command="{Binding OnButtonCommand}"></Button>
-                            </StackPanel>
-                            <Button Grid.Column="1" 
-                                    Click="ButtonScroll_OnClick"
-                                    Content="ChangeScrollColor"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"></Button>
-                        </Grid>
-                    </Grid>
-                </TabItem>
-                <TabItem Header="SpinnerDialog">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <views:SpinnerDialog></views:SpinnerDialog>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.DataContext>
-                                <vm:SpinnerDialogViewModel x:Name="DialogVm"></vm:SpinnerDialogViewModel>
-                            </Grid.DataContext>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBox x:Name="Box"
-                                        Text="{Binding SpinnerDialogModel.Text}" 
-                                         Width="100" 
-                                         Height="30"></TextBox>
-                                <Button Click="ButtonSpinner_OnClick"
-                                        Width="100" 
-                                        Height="30"
-                                        Content="Accept"></Button>
-                            </StackPanel>
-                            <Grid Grid.Column="1" Background="White" MaxWidth="50" MaxHeight="35">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition MaxWidth="20"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                
-                                <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
-                                           Text="{Binding SpinnerDialogModel.FontSize}"
-                                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                                <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding OnTextSizeUp}"/>
-                                <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding OnTextSizeDown}"/>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </TabItem>
-                <TabItem Header="DialogHost">
-                    <TabItem.DataContext>
-                        <vm:DialogHostViewModel></vm:DialogHostViewModel>
-                    </TabItem.DataContext>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <views:DialogHostElement Grid.Row="0" DataContext="{Binding}"/>
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="{Binding DialogHostModel.Radius}"
-                                       HorizontalAlignment="Center"></TextBlock>
-                            <Button Content="Radius+" Command="{Binding OnRadUp}"></Button>
-                            <Button Content="Radius-" Command="{Binding  OnRadDown}"></Button>
-                            <TextBlock Text="{Binding DialogHostModel.Transparency}"
-                                       HorizontalAlignment="Center"></TextBlock>
-                            <Button Content="Transparency+" Command="{Binding OnTrUp}"></Button>
-                            <Button Content="Transparency-" Command="{Binding OnTrDown}"></Button>
+                            <Button Content="Accept" Command="{Binding OnButtonCommand}" />
                         </StackPanel>
+                        <Button Grid.Column="1"
+                                Click="ButtonScroll_OnClick"
+                                Content="ChangeScrollColor"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
                     </Grid>
-                </TabItem>
-                <TabItem Header="Spinner">
-                    <TabItem.DataContext>
-                        <vm:SpinnerViewModel />
-                    </TabItem.DataContext>
-                    <Grid ShowGridLines="True" Background="Azure">
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        
-                        <views:Spinner Grid.Row="0" Grid.Column="0" DataContext="{Binding}"/>
-                        
-                        <StackPanel Grid.Row="1" Grid.Column="0">
-                            <Button Content="Change Colour"
-                                    MaxWidth="200"
-                                    Command="{Binding ButtonChangeColour}"
-                                    Background="{Binding SpinnerModel.ColourOfDots}"></Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="SpinnerDialog">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <views:SpinnerDialog />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.DataContext>
+                            <vm:SpinnerDialogViewModel x:Name="DialogVm" />
+                        </Grid.DataContext>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox x:Name="Box"
+                                     Text="{Binding SpinnerDialogModel.Text}"
+                                     Width="100"
+                                     Height="30" />
+                            <Button Click="ButtonSpinner_OnClick"
+                                    Width="100"
+                                    Height="30"
+                                    Content="Accept" />
                         </StackPanel>
-                        <Grid Grid.Row="1" Grid.Column="0" Background="White" MaxWidth="50" MaxHeight="35">
+                        <Grid Grid.Column="1" Background="White" MaxWidth="50" MaxHeight="35">
                             <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
+                                <RowDefinition />
+                                <RowDefinition />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition MaxWidth="20"></ColumnDefinition>
+                                <ColumnDefinition />
+                                <ColumnDefinition MaxWidth="20" />
                             </Grid.ColumnDefinitions>
-                            
+
                             <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
-                                       Text="{Binding SpinnerModel.SizeOfDots}"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-                            <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding ButtonUpClicked}"/>
-                            <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding ButtonDownClicked}"/>
+                                       Text="{Binding SpinnerDialogModel.FontSize}"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding OnTextSizeUp}" />
+                            <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding OnTextSizeDown}" />
                         </Grid>
                     </Grid>
-                </TabItem>
-            </TabControl>
-        </Window.Content>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DialogHost">
+                <TabItem.DataContext>
+                    <vm:DialogHostViewModel />
+                </TabItem.DataContext>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <views:DialogHostElement Grid.Row="0" DataContext="{Binding}" />
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="{Binding DialogHostModel.Radius}"
+                                   HorizontalAlignment="Center" />
+                        <Button Content="Radius+" Command="{Binding OnRadUp}" />
+                        <Button Content="Radius-" Command="{Binding  OnRadDown}" />
+                        <TextBlock Text="{Binding DialogHostModel.Transparency}"
+                                   HorizontalAlignment="Center" />
+                        <Button Content="Transparency+" Command="{Binding OnTrUp}" />
+                        <Button Content="Transparency-" Command="{Binding OnTrDown}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Spinner">
+                <TabItem.DataContext>
+                    <vm:SpinnerViewModel />
+                </TabItem.DataContext>
+                <Grid ShowGridLines="True" Background="Azure">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <views:Spinner Grid.Row="0" Grid.Column="0" DataContext="{Binding}" />
+
+                    <StackPanel Grid.Row="1" Grid.Column="0">
+                        <Button Content="Change Colour"
+                                MaxWidth="200"
+                                Command="{Binding ButtonChangeColour}"
+                                Background="{Binding SpinnerModel.ColourOfDots}" />
+                    </StackPanel>
+                    <Grid Grid.Row="1" Grid.Column="0" Background="White" MaxWidth="50" MaxHeight="35">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition MaxWidth="20" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                   Text="{Binding SpinnerModel.SizeOfDots}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <Button Grid.Row="0" Grid.Column="1" Content="+" Command="{Binding ButtonUpClicked}" />
+                        <Button Grid.Row="1" Grid.Column="1" Content="-" Command="{Binding ButtonDownClicked}" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Window.Content>
 </Window>

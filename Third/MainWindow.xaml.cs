@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
@@ -11,26 +9,23 @@ namespace Third
 {
 	public partial class MainWindow
 	{
-		public MainWindow()
-		{
-			InitializeComponent();
-		}
-
-		private readonly List<SolidColorBrush> _colorBrushesForeground = new List<SolidColorBrush>()
-		{
-        	new SolidColorBrush(Colors.DarkBlue),
-        	new SolidColorBrush(Colors.DarkGreen),
-        	new SolidColorBrush(Colors.DarkRed),
-        	new SolidColorBrush(Colors.DarkOrchid)
-		};
-		private readonly List<SolidColorBrush> _colorBrushesBackground = new List<SolidColorBrush>()
+		private readonly List<SolidColorBrush> _colorBrushesBackground = new List<SolidColorBrush>
 		{
 			new SolidColorBrush(Colors.LightBlue),
 			new SolidColorBrush(Colors.LightGreen),
 			new SolidColorBrush(Colors.LightYellow),
 			new SolidColorBrush(Colors.LightCyan)
 		};
-		private readonly List<SolidColorBrush> _colorBrushesScroll = new List<SolidColorBrush>()
+
+		private readonly List<SolidColorBrush> _colorBrushesForeground = new List<SolidColorBrush>
+		{
+			new SolidColorBrush(Colors.DarkBlue),
+			new SolidColorBrush(Colors.DarkGreen),
+			new SolidColorBrush(Colors.DarkRed),
+			new SolidColorBrush(Colors.DarkOrchid)
+		};
+
+		private readonly List<SolidColorBrush> _colorBrushesScroll = new List<SolidColorBrush>
 		{
 			new SolidColorBrush(Colors.Green),
 			new SolidColorBrush(Colors.Red),
@@ -42,14 +37,20 @@ namespace Third
 			new SolidColorBrush(Colors.Orchid),
 			new SolidColorBrush(Colors.Lime),
 			new SolidColorBrush(Colors.GreenYellow),
-			new SolidColorBrush(Colors.CornflowerBlue),
+			new SolidColorBrush(Colors.CornflowerBlue)
 		};
-		
+
+		public MainWindow()
+		{
+			InitializeComponent();
+		}
+
 		private void ButtonUp_OnClick(object sender, RoutedEventArgs e)
 		{
 			if (Convert.ToInt32(NumericUpDown.Text) + 1 < 31)
 				NumericUpDown.Text = (Convert.ToInt32(NumericUpDown.Text) + 1).ToString();
 		}
+
 		private void ButtonDown_OnClick(object sender, RoutedEventArgs e)
 		{
 			if (Convert.ToInt32(NumericUpDown.Text) - 1 > 0)
@@ -61,6 +62,7 @@ namespace Third
 			Resources[@"ColorBrushBackground"] =
 				_colorBrushesBackground[new Random().Next(0, _colorBrushesBackground.Count - 1)];
 		}
+
 		private void ChangeForeground_OnClick(object sender, RoutedEventArgs e)
 		{
 			Resources[@"ColorBrushForeground"] =

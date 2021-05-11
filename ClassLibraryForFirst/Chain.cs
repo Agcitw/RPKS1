@@ -15,7 +15,7 @@
 			Successor?.Handle(data);
 		}
 	}
-	
+
 	public class CheckOnPositiveNumber : ElementOfChain
 	{
 		public override void Handle(object data)
@@ -25,7 +25,7 @@
 			Successor?.Handle(data);
 		}
 	}
-	
+
 	public class CheckOnZero : ElementOfChain
 	{
 		public override void Handle(object data)
@@ -35,7 +35,7 @@
 			Successor?.Handle(data);
 		}
 	}
-	
+
 	public class CheckOnStringWithoutUpperChars : ElementOfChain
 	{
 		public override void Handle(object data)

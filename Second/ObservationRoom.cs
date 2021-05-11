@@ -5,14 +5,19 @@ namespace Second
 {
 	public class ObservationRoom
 	{
-		public int Capacity { get; }
 		public readonly Queue<Human> Queue = new Queue<Human>();
 
-		public ObservationRoom(int capacity) =>
+		public ObservationRoom(int capacity)
+		{
 			Capacity = capacity;
+		}
 
-		public bool IsQueueHasInfected() =>
-			Queue.Any(human => human.IsInfected);
+		public int Capacity { get; }
+
+		public bool IsQueueHasInfected()
+		{
+			return Queue.Any(human => human.IsInfected);
+		}
 
 		public void StartHelpPatients(List<Doctor> doctors, InfectDiseasesDepartment branch)
 		{

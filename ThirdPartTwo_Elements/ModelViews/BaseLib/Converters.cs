@@ -6,23 +6,29 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 {
 	public class BoolToVisibility : ConverterBase
 	{
-		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
-			!(value is bool b) ? throw new ArgumentException(string.Empty, nameof(value)) :
-			b ? Visibility.Visible : Visibility.Collapsed;
+		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			return !(value is bool b) ? throw new ArgumentException(string.Empty, nameof(value)) :
+				b ? Visibility.Visible : Visibility.Collapsed;
+		}
 	}
-	
+
 	public class NullToBool : ConverterBase
 	{
-		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) => 
-			!(value is null);
+		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			return !(value is null);
+		}
 	}
-	
+
 	public class NullToVisibility : ConverterBase
 	{
-		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
-			value is null ? Visibility.Collapsed : Visibility.Visible;
+		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			return value is null ? Visibility.Collapsed : Visibility.Visible;
+		}
 	}
-	
+
 	public class Percentage : ConverterBase
 	{
 		public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -32,7 +38,7 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 			return d * p;
 		}
 	}
-	
+
 	public class MultiBoolToBool : MultiConverterBase
 	{
 		public enum Cases
@@ -42,7 +48,7 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 			FalseAll,
 			FalseOne
 		}
-		
+
 		public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 		{
 			if (!(parameter is Cases p))
@@ -64,6 +70,7 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 					default: throw new ArgumentOutOfRangeException();
 				}
 			}
+
 			switch (p)
 			{
 				case Cases.TrueAll: return true;
@@ -74,17 +81,9 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 			}
 		}
 	}
-	
+
 	public class MultiBoolToVisibility : MultiConverterBase
 	{
-		private enum Cases
-		{
-			TrueAll,
-			TrueOne,
-			FalseAll,
-			FalseOne
-		}
-		
 		public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 		{
 			if (!(parameter is Cases p))
@@ -106,6 +105,7 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 					default: throw new ArgumentOutOfRangeException();
 				}
 			}
+
 			switch (p)
 			{
 				case Cases.TrueAll: return Visibility.Visible;
@@ -114,6 +114,14 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 				case Cases.FalseOne: return Visibility.Collapsed;
 				default: throw new ArgumentOutOfRangeException();
 			}
+		}
+
+		private enum Cases
+		{
+			TrueAll,
+			TrueOne,
+			FalseAll,
+			FalseOne
 		}
 	}
 }

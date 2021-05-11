@@ -7,16 +7,16 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 {
 	public abstract class MultiConverterBase : MarkupExtension, IMultiValueConverter
 	{
-		public override object ProvideValue(IServiceProvider serviceProvider)
-		{
-			throw new NotImplementedException();
-		}
-
 		public abstract object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);
 
 		public virtual object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
 		{
 			throw new NotImplementedException();
+		}
+
+		public override object ProvideValue(IServiceProvider serviceProvider)
+		{
+			return this;
 		}
 	}
 }

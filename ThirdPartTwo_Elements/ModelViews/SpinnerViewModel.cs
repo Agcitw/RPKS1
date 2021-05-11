@@ -9,7 +9,16 @@ namespace ThirdPartTwo_Elements.ModelViews
 {
 	public sealed class SpinnerViewModel : BaseViewModel
 	{
-		private static SpinnerModel _spinnerModel = new SpinnerModel();
+		private static SpinnerModel _spinnerModel = new();
+
+		public SpinnerViewModel()
+		{
+			_spinnerModel.ColourOfDots = new SolidColorBrush(Colors.Coral);
+			_spinnerModel.CountOfDots = 12;
+			_spinnerModel.SizeOfDots = 4;
+			_spinnerModel.ClockwiseMovement = true;
+			_spinnerModel.Velocity = 1.0;
+		}
 
 		public SpinnerModel SpinnerModel
 		{
@@ -20,29 +29,20 @@ namespace ThirdPartTwo_Elements.ModelViews
 				OnPropertyChanged(nameof(SpinnerModel));
 			}
 		}
-		
-		public SpinnerViewModel()
-		{
-			_spinnerModel.ColourOfDots = new SolidColorBrush(Colors.Coral);
-			_spinnerModel.CountOfDots = 12;
-			_spinnerModel.SizeOfDots = 4;
-			_spinnerModel.ClockwiseMovement = true;
-			_spinnerModel.Velocity = 1.0;
-		}
 
 		public ICommand ButtonUpClicked =>
 			new RelayCommand(_ => _spinnerModel.SizeOfDots++, o => _spinnerModel.SizeOfDots < 20);
-		
+
 		public ICommand ButtonDownClicked =>
 			new RelayCommand(_ => _spinnerModel.SizeOfDots--, o => _spinnerModel.SizeOfDots > 0);
 
 		public ICommand ButtonChangeColour =>
-			new RelayCommand(_ => 
+			new RelayCommand(_ =>
 				_spinnerModel.ColourOfDots = new SolidColorBrush(Color.FromArgb(
 					255,
-					(byte)new Random().Next(200, 256),
-					(byte)new Random().Next(0, 108),
-					(byte)new Random().Next(0, 256)
+					(byte) new Random().Next(200, 256),
+					(byte) new Random().Next(0, 108),
+					(byte) new Random().Next(0, 256)
 				))
 			);
 	}

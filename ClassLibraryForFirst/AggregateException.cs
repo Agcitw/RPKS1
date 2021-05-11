@@ -4,19 +4,21 @@ namespace ClassLibrary
 {
 	public class NoRulesException : AggregateException
 	{
-		public override string Message { get; }
 		public NoRulesException()
 		{
 			Message = "No rules in your validator";
 		}
+
+		public override string Message { get; }
 	}
 
 	public class BadCheckException : AggregateException
 	{
-		public override string Message { get; }
 		public BadCheckException()
 		{
 			Message = "Check is not completed";
 		}
+
+		public override string Message { get; }
 	}
 }

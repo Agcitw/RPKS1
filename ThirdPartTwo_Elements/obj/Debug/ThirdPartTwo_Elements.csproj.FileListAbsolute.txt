@@ -22,3 +22,5 @@ C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\Spinner
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\SpinnerDialog.baml
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\MessageDialog.g.cs
 C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\MessageDialog.baml
+C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\NumericKeyboard.g.cs
+C:\Users\anton\RiderProjects\RPKS1\ThirdPartTwo_Elements\obj\Debug\Views\NumericKeyboard.baml

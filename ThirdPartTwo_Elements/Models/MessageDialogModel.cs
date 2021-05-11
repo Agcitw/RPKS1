@@ -17,13 +17,18 @@ namespace ThirdPartTwo_Elements.Models
 	public sealed class MessageDialogModel : INotifyPropertyChanged
 	{
 		private static string _textInTextBlock;
-		private int _fontSize;
-		private Buttons _buttons;
-		private ICommand _commandOnClick;
+		public readonly ICommand DoubleText = new RelayCommand(_ => _textInTextBlock += _textInTextBlock);
 
 		public readonly ICommand Nothing = new RelayCommand(_ => { });
-		public readonly ICommand DoubleText = new RelayCommand(_ => _textInTextBlock += _textInTextBlock);
 		public readonly ICommand RemoveText = new RelayCommand(_ => _textInTextBlock = string.Empty);
+		private Visibility _b1Visibility = Visibility.Visible;
+		private Visibility _b2Visibility = Visibility.Visible;
+		private Buttons _buttons;
+		private ICommand _commandOnClick;
+		private int _fontSize;
+
+		private string _textOnB1 = "Yes";
+		private string _textOnB2 = "No";
 
 		public MessageDialogModel(string textInTextBlock, int fontSize, Buttons buttons, ICommand commandOnClick)
 		{
@@ -113,11 +118,6 @@ namespace ThirdPartTwo_Elements.Models
 			}
 		}
 
-		private string _textOnB1 = "Yes";
-		private string _textOnB2 = "No";
-		private Visibility _b1Visibility = Visibility.Visible;
-		private Visibility _b2Visibility = Visibility.Visible;
-		
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		[NotifyPropertyChangedInvocator]

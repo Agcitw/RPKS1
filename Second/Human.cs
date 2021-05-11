@@ -6,8 +6,6 @@ namespace Second
 	{
 		private const double ProbabilityForInf = 0.2;
 		private const double ProbabilityForSpec = 0.05;
-		public bool IsInfected { get; set; }
-		public bool IsSpecial { get; set; }
 
 		public Human()
 		{
@@ -19,5 +17,8 @@ namespace Second
 			IsInfected = n1 <= p1;
 			IsSpecial = n2 <= p2;
 		}
+
+		public bool IsInfected { get; set; }
+		public bool IsSpecial { get; set; }
 	}
 }

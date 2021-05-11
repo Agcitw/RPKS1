@@ -8,26 +8,26 @@ namespace ThirdPartTwo_Elements.Views
 {
 	public partial class MessageDialog : UserControl
 	{
-		private readonly List<SolidColorBrush> _colorBrushesScroll = new List<SolidColorBrush>()
+		private readonly List<SolidColorBrush> _colorBrushesScroll = new()
 		{
-			new SolidColorBrush(Colors.Green),
-			new SolidColorBrush(Colors.Red),
-			new SolidColorBrush(Colors.Yellow),
-			new SolidColorBrush(Colors.Orange),
-			new SolidColorBrush(Colors.Pink),
-			new SolidColorBrush(Colors.RosyBrown),
-			new SolidColorBrush(Colors.Gold),
-			new SolidColorBrush(Colors.Orchid),
-			new SolidColorBrush(Colors.Lime),
-			new SolidColorBrush(Colors.GreenYellow),
-			new SolidColorBrush(Colors.CornflowerBlue),
+			new(Colors.Green),
+			new(Colors.Red),
+			new(Colors.Yellow),
+			new(Colors.Orange),
+			new(Colors.Pink),
+			new(Colors.RosyBrown),
+			new(Colors.Gold),
+			new(Colors.Orchid),
+			new(Colors.Lime),
+			new(Colors.GreenYellow),
+			new(Colors.CornflowerBlue)
 		};
 
 		public MessageDialog()
 		{
 			InitializeComponent();
 		}
-		
+
 		public void ButtonScroll_OnClick(object sender, RoutedEventArgs e)
 		{
 			Resources[@"ColorBrushScroll"] =

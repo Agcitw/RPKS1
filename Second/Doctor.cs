@@ -18,6 +18,7 @@ namespace Second
 				doctorForHelp.IsBusy = true;
 				InfectDiseasesDepartment.Logger.Info("Called second doctor for help");
 			}
+
 			var time = new Random().Next(1000, InfectDiseasesDepartment.LimitOfWaiting);
 			await Task.Delay(time);
 			human.IsInfected = false;

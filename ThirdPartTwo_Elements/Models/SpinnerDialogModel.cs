@@ -6,8 +6,8 @@ namespace ThirdPartTwo_Elements.Models
 {
 	public sealed class SpinnerDialogModel : INotifyPropertyChanged
 	{
-		private string _text;
 		private int _fontSize;
+		private string _text;
 
 		public SpinnerDialogModel(string text, int fontSize)
 		{

@@ -9,9 +9,11 @@ namespace ThirdPartTwo_Elements.ModelViews.BaseLib
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		[NotifyPropertyChangedInvocator]
-		protected void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+		protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-		
+		}
+
 		[NotifyPropertyChangedInvocator]
 		protected void OnPropertiesChanged(params string[] propertyNames)
 		{

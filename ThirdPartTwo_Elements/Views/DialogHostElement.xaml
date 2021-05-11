@@ -6,29 +6,26 @@
              xmlns:vm="clr-namespace:ThirdPartTwo_Elements.ModelViews"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
     <UserControl.DataContext>
-        <vm:DialogHostViewModel></vm:DialogHostViewModel>
+        <vm:DialogHostViewModel />
     </UserControl.DataContext>
-    
+
     <UserControl.Template>
         <ControlTemplate TargetType="UserControl">
             <Grid>
                 <Border Background="Black"
                         Opacity="{Binding DialogHostModel.Transparency}">
                     <Border Background="White"
-                            CornerRadius="{Binding DialogHostModel.Radius}">
-                    </Border>
+                            CornerRadius="{Binding DialogHostModel.Radius}" />
                     <Border.InputBindings>
                         <MouseBinding MouseAction="LeftClick"
-                                      Command="{Binding OpenDialogCommand}"></MouseBinding>
+                                      Command="{Binding OpenDialogCommand}" />
                     </Border.InputBindings>
                 </Border>
-                <ContentPresenter x:Name="Presenter" Width="150" Height="100">
-                    
-                </ContentPresenter>
+                <ContentPresenter x:Name="Presenter" Width="150" Height="100" />
             </Grid>
         </ControlTemplate>
     </UserControl.Template>
-    
+
 </UserControl>

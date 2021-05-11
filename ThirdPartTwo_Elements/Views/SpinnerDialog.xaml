@@ -11,17 +11,17 @@
         <v:DialogHostElement>
             <Grid>
                 <Grid.DataContext>
-                    <vm:SpinnerDialogViewModel></vm:SpinnerDialogViewModel>
+                    <vm:SpinnerDialogViewModel />
                 </Grid.DataContext>
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
-                <v:Spinner Grid.Row="0"></v:Spinner>
+                <v:Spinner Grid.Row="0" />
                 <TextBlock Grid.Row="1"
                            Text="{Binding SpinnerDialogModel.Text}"
                            FontSize="{Binding SpinnerDialogModel.FontSize}"
-                           HorizontalAlignment="Center"></TextBlock>
+                           HorizontalAlignment="Center" />
             </Grid>
         </v:DialogHostElement>
     </UserControl.Content>

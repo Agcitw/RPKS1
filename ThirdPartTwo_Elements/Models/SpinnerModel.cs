@@ -7,10 +7,10 @@ namespace ThirdPartTwo_Elements.Models
 {
 	public sealed class SpinnerModel : INotifyPropertyChanged
 	{
+		private bool _clockwiseMovement;
+		private SolidColorBrush _colourOfDots;
 		private int _countOfDots;
 		private int _sizeOfDots;
-		private SolidColorBrush _colourOfDots;
-		private bool _clockwiseMovement;
 		private double _velocity;
 
 		public int CountOfDots
@@ -40,7 +40,7 @@ namespace ThirdPartTwo_Elements.Models
 			{
 				_colourOfDots = value;
 				OnPropertyChanged(nameof(ColourOfDots));
-			} 
+			}
 		}
 
 		public bool ClockwiseMovement
@@ -56,17 +56,16 @@ namespace ThirdPartTwo_Elements.Models
 		public double Velocity
 		{
 			get => _velocity;
-			set 
+			set
 			{
 				_velocity = value;
 				OnPropertyChanged(nameof(Velocity));
-		    }
+			}
 		}
 
-		
-		
+
 		public event PropertyChangedEventHandler PropertyChanged;
-		
+
 		[NotifyPropertyChangedInvocator]
 		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{

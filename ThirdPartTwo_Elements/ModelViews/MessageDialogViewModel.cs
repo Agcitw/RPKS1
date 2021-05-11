@@ -9,8 +9,9 @@ namespace ThirdPartTwo_Elements.ModelViews
 {
 	public class MessageDialogViewModel : BaseViewModel
 	{
-		private static MessageDialogModel _messageDialogModel = 
-			new MessageDialogModel("test stringlooooooooooong\ntest string\ntest string\ntest string\ntest string\ntest string",
+		private static MessageDialogModel _messageDialogModel =
+			new(
+				"test stringlooooooooooong\ntest string\ntest string\ntest string\ntest string\ntest string",
 				12, Buttons.YesNo, new RelayCommand(_ => { }));
 
 		public MessageDialogModel MessageDialogModel
@@ -28,14 +29,14 @@ namespace ThirdPartTwo_Elements.ModelViews
 
 		public ICommand OnButtonUp =>
 			new RelayCommand(_ => _messageDialogModel.FontSize++, _ => _messageDialogModel.FontSize < 30);
-		
+
 		public ICommand OnButtonDown =>
 			new RelayCommand(_ => _messageDialogModel.FontSize--, _ => _messageDialogModel.FontSize > 1);
 
 		public ICommand OnButtonCommand =>
 			new RelayCommand(_ => _messageDialogModel.CommandOnClick.Execute(_));
-		
-		
+
+
 		public ICommand OnButtonsChange =>
 			new RelayCommand(o =>
 			{
@@ -55,7 +56,7 @@ namespace ThirdPartTwo_Elements.ModelViews
 					default:
 						throw new ArgumentException();
 				}
-				
+
 				switch (b)
 				{
 					case Buttons.Ok:
