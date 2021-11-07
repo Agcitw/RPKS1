@@ -1,2 +1,2 @@
-# RPKS1
+# RPKS
 WPF, c# fundamentals
