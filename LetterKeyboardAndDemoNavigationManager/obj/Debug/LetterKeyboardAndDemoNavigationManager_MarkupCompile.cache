@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\anton\RiderProjects\RPKS1\LetterKeyboardAndDemoNavigationManager\obj\Debug\
+C:\Users\anton\RiderProjects\WPF_CSharpFundamentals\LetterKeyboardAndDemoNavigationManager\obj\Debug\
 LetterKeyboardAndDemoNavigationManager
 none
 false
 DEBUG;TRACE
-C:\Users\anton\RiderProjects\RPKS1\LetterKeyboardAndDemoNavigationManager\App.xaml
+C:\Users\anton\RiderProjects\WPF_CSharpFundamentals\LetterKeyboardAndDemoNavigationManager\App.xaml
 4-585151276
 
 9-1267281920
-10623950162
+102037255903
 Controls\LetterKeyboard.xaml;MainWindow.xaml;Pages\LetterKeyboardPage.xaml;Pages\StartPage.xaml;
 
 False
